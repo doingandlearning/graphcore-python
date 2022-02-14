@@ -24,11 +24,14 @@ A common use of Python is to read data from a text file, process the data, and g
 If you want more information about FIX, there's an interesting article available on Wiki. See https://en.wikipedia.org/wiki/Financial_Information_eXchange.
 
 Take a look in the Student folder. Notice the folder contains a file named fixdata.txt. Open this file in a text editor. The file contains a single line of text, which comprises a series of FIX tokens such as the following:
+
     8=FIX.4.4
     9=211
     35=D
     etc…
+
 Each of these tokens is a key=value pair. The keys are special FIX numbers. Each of these numbers has a predefined meaning in FIX. For example:
+
     The "8" token means "BeginString"
     The "9" token means "BodyLength"
     The "35" token means "MsgType"

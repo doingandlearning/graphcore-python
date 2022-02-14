@@ -157,7 +157,7 @@ To create a range, use the range constructor
 
 Example:
 
-```python
+```python {all|6|7|8|all}
 def display_range(msg, r):
     print("\n" + msg)
     for i in r:
@@ -285,7 +285,7 @@ print("%s" % euro)      # []
 layout: two-cols
 ---
 
-# Optional exercise
+# Exercise
 
 Write a Python program as follows:
 - Ask the user to enter a series of numbers (-1 to quit)
@@ -417,7 +417,7 @@ print("%s" % (s1 ^ s2))                     # {'AU', 'SG'}
 
 You can perform these operations on a mutable set:
 
-```python
+```python {all|6|7|}
 s1.add("HK")
 s1.remove("US")
 s1.discard("D")
