@@ -21,37 +21,40 @@ There are 4 exercises in this lab, of which the last two exercises are "if time 
 
 ## Exercise 1:  Using numeric types
 Create a new module, and import the math module ready to do some mathematical calculations. Ask the user to enter the radius of the circle or sphere, r, as a floating point value. Then perform the following calculations:
-• The diameter of a circle (2r).
-• The area of a circle (πr2)
-• The circumference of a circle (2πr)
-• The area of a sphere (4πr2)
-• The volume of a sphere (4/3 πr3). By the way, in Python 2, 4//3 would evaluate to 1 rather than 1.33333 (!).
+- The diameter of a circle (2r).
+- The area of a circle (πr2)
+- The circumference of a circle (2πr)
+- The area of a sphere (4πr2)
+- The volume of a sphere (4/3 πr3). By the way, in Python 2, 4//3 would evaluate to 1 rather than 1.33333 (!).
  
 Output the results nicely. Run the code several times with different values for the radius, to ensure you get the correct results.
 
 # Exercise 2:  Using strings
 Create a new module, and prompt the user to enter the following textual information:
-• Honorific, e.g. Mr. or Mrs.
-• First name
-• Last name
+- Honorific, e.g. Mr. or Mrs.
+- First name
+- Last name
+
 Create a variable to hold their name in the following format, and then output the value:
-• Honorific
-• A space character
-• First letter of their first name, in upper case
-• A period, followed by a space
-• Last name, ensuring that it starts with a uppercase letter and then all lowercase thereafter
+- Honorific
+- A space character
+- First letter of their first name, in upper case
+- A period, followed by a space
+- Last name, ensuring that it starts with a uppercase letter and then all lowercase thereafter
+
 Hint: You might want to look up the String class in the Python 3.7 online documentation at https://docs.python.org/3.8/library/string.html:  
-• format()
-• title()
-• upper()
+- format()
+- title()
+- upper()
  
 Once you've got that working to your satisfaction, add some more code to ask the user to input their email address and (fictional!) 4-digit pin code. Get these values as strings, and then validate them as follows:
-• The e-mail address must contain an "@" character. The easiest way to test if a character is in a string is as follows (we've assumed your email address variable is named email):
+- The e-mail address must contain an "@" character. The easiest way to test if a character is in a string is as follows (we've assumed your email address variable is named email):
  "@" in email
-• The pin code must be 4 characters long. The easiest way to test the length of a string and other sequences is via the built-in len() function (we've assumed your pin code variable is named pincode here):
+- The pin code must be 4 characters long. The easiest way to test the length of a string and other sequences is via the built-in len() function (we've assumed your pin code variable is named pincode here):
  len(pincode) == 4
-• The pin code must contain just digits. Use the String class's isdigit() method here:
+- The pin code must contain just digits. Use the String class's isdigit() method here:
  pincode.isdigit()
+
 If everything is valid, output the details in lowercase. If anything is invalid, output an error. Use an if: else: construct here.
  
  

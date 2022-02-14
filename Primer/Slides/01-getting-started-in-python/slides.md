@@ -45,6 +45,8 @@ drawings:
 
 # Hello Python
 
+<v-clicks>
+
 - Python is a powerful and expressive programming language
   - Object-oriented
   - Dynamic typing
@@ -56,9 +58,13 @@ drawings:
   - Mac OS X
   - etc ...
 
+</v-clicks>
+
 ---
 
 # What can you do with Python?
+
+<v-clicks>
 
 - Scripting
 - File I/O
@@ -66,11 +72,16 @@ drawings:
 - Web applications and REST web services
 - Data science
 
+</v-clicks>
+
 --- 
 
 # Downloading Python
 
 Are we all there?
+
+- [Anaconda](https://www.anaconda.com/products/individual)
+- [PyCharm CE](https://www.jetbrains.com/pycharm/download/#section=mac)
 
 ---
 
@@ -118,6 +129,8 @@ Note: These are already installed in Anaconda
 
 # Running Python Script Interactively
 
+<v-clicks>
+
 Run the Python interpreter in interactive mode, and execute Python code.
 
 ```bash
@@ -128,6 +141,8 @@ Then enter some Python code. For example:
 ```python
 print("Hello World")
 ```
+
+</v-clicks>
 
 ---
 
@@ -142,7 +157,7 @@ Rules for identifiers in Python
   - Can contain uppercase or lowercase letters, digits, and underscore 
   - But can't start with a digit
 
-```python
+```python {all|1|2|3|4|all}
 firstname = "Homer"
 lastname = "Simpson"
 fullname = firstname + " " + lastname
@@ -155,10 +170,12 @@ print(fullname)
 
 # Line Continuation
 
-If a statement spans multiple lines…
-  - You can use \ to continue from one line to the next
+<v-clicks>
 
-```python
+If a statement spans multiple lines…
+  - You can use `\` to continue from one line to the next
+
+```python {all|1|2|3-5|6|all}
 firstname = "Homer"
 lastname = "Simpson"
 fullname = firstname + \
@@ -167,24 +184,32 @@ lastname
 print(fullname)
 ```
 
+</v-clicks>
+
 ---
 
 # Blocks
+
+<v-clicks>
 
 Python uses indentation to denote blocks
 - Don't use {} 
 - Use `:` to indicate the start of an indented block
 
-```python
+```python {all|1|2-3|4|all}
 age = 21
 if age >= 18 and age <= 30:
     print("You are eligible for an 18-30s holiday!")
 print("That's all folks")
 ```
 
+</v-clicks>
+
 ---
 
 # Creating and Running Python Modules
+
+<v-clicks>
 
 You can put Python code into modules
 - A module is just a script file containing Python code
@@ -202,6 +227,10 @@ You can run the module via the Python interpreter
 python greeting.py
 ```
 
+</v-clicks>
+
+---
+layout:two-cols
 ---
 
 # Python Keywords
@@ -218,6 +247,8 @@ Here is a full list of all the keywords in Python
 - with, as
 - yield
 - await, async
+
+::right::
 
 You can ask Python to tell you about all its keywords:
 
@@ -242,8 +273,13 @@ keyword.kwlist
 - Deactivating a virtual environment
 
 ---
+layout: image-right
+image: ./assets/python_environment_2x.png
+---
 
 # Overview
+
+<v-clicks>
 
 In your life as a Python developer, you'll likely create many applications that use diverse Python packages
 
@@ -252,9 +288,13 @@ Ideally you would like the applications to be independent of each other
 
 To help you keep Python application environments isolated from each other, you can use the virtualenv tool
 
+</v-clicks>
+
 ---
 
 # Installing virtualenv
+
+<v-clicks>
 
 You install virtualenv via pip as a one-off exercise as follows:
 
@@ -268,9 +308,13 @@ You can test you installation as follows:
 virtualenv --version
 ```
 
+</v-clicks>
+
 ---
 
 # Creating a virtual environment for a project
+
+<v-clicks>
 
 To create a virtual environment for a particular project:
 
@@ -282,9 +326,13 @@ This command creates a folder named MyProject that contains:
 - Python executable files
 - A copy of the pip library, which you can use to install other packages (locally for this virtual environment)
 
+</v-clicks>
+
 ---
 
 # Activating a virtual environment
+
+<v-clicks>
 
 To begin using a virtual environment, you must activate it 
 
@@ -302,9 +350,13 @@ MyProject\Scripts\activate
 
 After you've activated a virtual environment, its name will appear in the command prompt.
 
+</v-clicks>
+
 ---
 
 # Using virtualenv
+
+<v-clicks>
 
 You can now use pip to installl packages into your virtual environment.
 - e.g. to install the 'request' packages:
@@ -327,9 +379,13 @@ And run it as normal
 python main.py
 ```
 
+</v-clicks>
+
 ---
 
 # Deactivating a virtual environment
+
+<v-clicks>
 
 You can deactivate a virtual environment as follows:
 
@@ -340,3 +396,5 @@ deactivate
 This tears down your virtual environment
 - You don't see the packages in that virtual environment any more
 - You can reactivate it whenever you need to (see 2 slides previous)
+
+</v-clicks>

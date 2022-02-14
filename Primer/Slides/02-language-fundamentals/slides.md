@@ -41,6 +41,8 @@ drawings:
 
 # The Python standard library
 
+<v-clicks>
+
 Python defines an extensive and powerful standard library
 - Comprises a large number of modules
 
@@ -49,14 +51,19 @@ Built-in modules are implemented in C
 - E.g. file I/O
 
 Other modules are implemented in Python
-See the Lib folder in the Python installation folder
+
+- See the Lib folder in the Python installation folder
 
 For full info, see:
 https://docs.python.org/3.10/library 
 
+</v-clicks>
+
 ---
 
 # Understanding modules
+
+<v-clicks>
 
 You can create your own Python modules
 - Here's a simple module, which just defines some variables
@@ -85,9 +92,13 @@ from greetings import *
 print(morning + " " + afternoon + " " + evening)
 ```
 
+</v-clicks>
+
 ---
 
 # More about modules
+
+<v-clicks>
 
 You can access the name of a module
 Use the __name__ property
@@ -109,9 +120,13 @@ Python searches the following locations for a module
 - The directory specified by PYTHONPATH 
 - The installation-dependent default
 
+</v-clicks>
+
 ---
 
 # Listing the names in a module
+
+<v-clicks>
 
 You can list all the names defined in a module
 - Use the dir() built-in function
@@ -128,6 +143,8 @@ print("\nNames in the current module:")
 print(dir())
 ```
 
+</v-clicks>
+
 ---
 
 # Defining and using packages
@@ -142,8 +159,10 @@ print(dir())
 
 # Overview of packages
 
+<v-clicks>
+
 Python allows you to organise related modules into packages and sub-packages
-- A package is a folder that contains a file named __init__.py
+- A package is a folder that contains a file named `__init__.py`
 
 Example
 
@@ -162,9 +181,13 @@ utils/                    Top-level package, named utils.
               ...
 ```
 
+</v-clicks>
+
 ---
 
 # Example modules
+
+<v-clicks>
 
 Here are the modules we've defined in the utils package
 Modules in the utils.constants sub-package:
@@ -191,9 +214,13 @@ HELLO = "Hei"
 GOODBYE = "Ha det bra"
 ```
 
+</v-clicks>
+
 ---
 
 # Importing specific modules
+
+<v-clicks>
 
 To import specific module(s) from a package:
 
@@ -222,9 +249,13 @@ print("Inch to centimetre: %.4f" % INCH_TO_CM)
 print("Mile to kilometre:  %.4f" % MILE_TO_KM)
 ```
 
+</v-clicks>
+
 ---
 
 # Aliasing imported modules
+
+<v-clicks>
 
 You can specify a local alias for a module
 - Use import … as
@@ -238,9 +269,13 @@ print("Inch to centimetre: %.4f" % metric.INCH_TO_CM)
 print("Mile to kilometre:  %.4f" % metric.MILE_TO_KM)
 ```
 
+</v-clicks>
+
 ---
 
 # Importing all modules
+
+<v-clicks>
 
 You can use * to indicate you want to import all modules from a package
 
@@ -261,6 +296,8 @@ You must tell Python which modules to actually import from that package
 __all__ = ["french", "norwegian"]
 ```
 
+</v-clicks>
+
 ---
 
 # Basic data types
@@ -277,13 +314,16 @@ __all__ = ["french", "norwegian"]
 - Other built-in types
 
 ---
-
+layout: two-cols
+---
 # Numbers
 
 Python has three numeric types
 - Integers
 - Floating point numbers
 - Complex numbers
+
+::right::
 
 ```python
 i1 = 12345
@@ -308,6 +348,8 @@ print("%g + %gi" % (c4.real, c4.imag))
 ```
 
 ---
+layout: two-cols
+---
 
 # Numeric operators
 
@@ -320,6 +362,9 @@ Python supports the following operators on numbers
 - float(x)
 - int(x)
 - abs(x)
+
+::right::
+
 - +x
 - -x
 - x % y
@@ -332,6 +377,8 @@ Python supports the following operators on numbers
 ---
 
 # Using the math module
+
+<v-clicks>
 
 The math module defines several useful mathematical constants and functions
 For details, see https://docs.python.org/3.10/library/math.html 
@@ -355,9 +402,13 @@ print("hypoteneuse of right-angled triangle (sides 3, 4) is %g" % math.hypot(3, 
 print("5 factorial is %g" % math.factorial(5))
 ```
 
+</v-clicks>
+
 ---
 
 # Booleans
+
+<v-clicks>
 
 Boolean is a built-in type
 - Represents truth or falsehood
@@ -372,6 +423,8 @@ The following values are considered false:
 All other values are considered true
 - Including the True keyword ☺
 
+</v-clicks>
+
 ---
 
 # Relational operators
@@ -379,8 +432,8 @@ All other values are considered true
 Python supports the following relational operators
 - <
 - <=
-- >
-- >=
+- \>
+- \>=
 - ==
 - !=
 - is
@@ -417,7 +470,10 @@ print("%s %s %s" % (is_summer, is_winter, is_transition_season))
 
 # Strings
 
+<v-clicks>
+
 A string is an immutable sequence of Unicode characters
+
 Can enclose in single quotes, double quotes, or triple quotes
 
 ```python
@@ -436,7 +492,10 @@ The String class defines many methods
 For details, see https://docs.python.org/3.10/library/string.html 
 
 There's also excellent support for regular expressions
+
 For details, see https://docs.python.org/3.10/library/re.html 
+
+</v-clicks>
 
 ---
 
@@ -456,3 +515,7 @@ Set types
 
 Mapping type
 - dict
+
+---
+
+# Any questions?

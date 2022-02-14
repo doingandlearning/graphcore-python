@@ -6,8 +6,8 @@ In this lab, you’ll refactor the date processing code from the previous lab, s
 If time permits, you'll have a go at defining variadic functions.
 
 Source folders
-Student folder	:	C:\PythonDev\Student\04-Functions
-Solution folder:	C:\PythonDev\Solutions\04-Functions
+Student folder	:	Student\04-Functions
+Solution folder:	Solutions\04-Functions
 
 # Roadmap
 There are 3 exercises in this lab, of which the last exercise is "if time permits". Here is a brief summary of the tasks you will perform in each exercise; more detailed instructions follow later:

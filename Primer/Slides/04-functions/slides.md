@@ -20,332 +20,354 @@ drawings:
   persist: false
 ---
 
-# Control Flow
-
-- Conditional Statements
-- Loops
+# Functions
 
 ---
 
-# Conditional Statements
-
-- Using if tests
-- Nesting if tests
-- Using the if-else operator
-- Doing nothing
-- Testing a value is in a set of values 
-- Testing a value is in a range
+- Getting started with functions
+- Going further with functions
 
 ---
 
-# Using if tests 
+# Getting started with functions
 
-Basic if tests
-
-```python
-if expression:
-  body
-```
-
-if-else tests
-
-```python 
-if expression:
-  body1
-else:
-  body2
-```
-
-if-elif tests
-```python
-if expression1 :
-  body1
-
-elif expression2 :
-  body2
-
-elif expression3 :
-  body3
-…
-else : 
-  lastBody
-```
-
-Notes:
-- Test conditions can be any type of expression
-- Use indentation to indicate the extent of a block, i.e. don't use {}
+- Simple functions
+- Passing arguments to a function
+- Returning a value from a function
+- Understanding scope
 
 ---
 
-# Nesting if tests
+# Simple functions (1/2)
 
-You can nest if tests inside each other
-- Use indentation to indicate level of nesting
+<v-clicks>
 
-Example:
+A function is a named block of code
+- Starts with the def keyword
+- Followed by the name of the function
+- Followed by parentheses, where you can define arguments
+- Followed by a block, where you define the function body
 
 ```python
-age = int(input("Please enter your age: "))
-gender = input("Please enter your gender [M/F]: ").lower()
-
-if age < 18:
-  if gender == "m":
-    print("Boy")
-  else:
-    print("Girl")
-  
-else: 
-  if age >= 100: 
-    print("Centurion")
-   
-  if gender == "m": 
-    print("Man")
-  else: 
-    print("Woman")
-  
-print("The End")
+def name_of_function(arg1, arg2, …, argn):
+  statements
+  statements
+  …
 ```
+
+To call a function
+- Specify the function name
+- Followed by parentheses, where you can pass arguments
+
+```python
+name_of_function(argvalue1, argvalue2, …, argvaluen)
+```
+
+</v-clicks>
+
+---
+layout: two-cols
+---
+# Simple functions (2/2)
+
+
+Here's an example of how to define and call simple functions
+
+::right:: 
+
+```python {all|1-4|1|2-4|6-9|11-12|1-12|15-18|20-21|all}
+def say_goodmorning():
+  print("Start of say_goodmorning")
+  print(" Good morning!")
+  print("End of say_goodmorning\n")
+
+def say_goodafternoon():
+  print("Start of say_goodafternoon")
+  print("  Good afternoon!")
+  print("End of say_goodafternoon\n")
+
+def say_goodevening():
+  pass
+
+
+# Usage (i.e. client code)
+say_goodmorning()
+say_goodafternoon()
+say_goodevening()
+
+f = say_goodmorning
+f()                   # Calls say_goodmorning() really
+
+print("THE END")
+```
+
 
 ---
 
-# Using the if-else operator
+# Passing arguments to a function
 
-The if-else operator is an in-situ test
-- trueResult if condition else falseResult
+<v-clicks>
 
-Example:
-
-```python
-isMale = …
-age    = …
-
-togo = (65 - age) if isMale else (60 - age)
-
-print("%d years to retirement" % togo)
-```
-
----
-
-# Doing nothing
-
-If you're not sure what to do if a test is true…
-- You can use the pass statement
-- Equivalent to a null statement in other languages
-
-Example:
-
-```python
-team = input("Who is your favourite rugby team? ")
-
-if team == "Ireland":
-  pass     # Eeek. We'll need to do something about this!
-
-print("Your favourite team is %s " % team)
-```
-
----
-
-# Testing a value is in a set of values 
-
-You can test if a value is in a set of allowable values
-- Use the in operator
-
-Example:
-
-```python
-country = input("Please enter your country: ")
-
-if country in ("Netherlands", "Belgium", "Luxembourg"):
-  print("Lowlands country")
-
-elif country in ("Norway", "Sweden", "Denmark", "Finland", "Iceland"):
-  print("Nordic country")
-
-elif country in ("England", "Scotland", "Wales", "Northern Ireland"):
-  print("UK country")
-
-else:
-  print("%s isn't classified in this particular application!" % country) 
-```
-
----
-
-# Testing a value is in a range
-
-You can test if a value is in a range of allowable values
-- Call range(start,end) to return a range
-- The range is inclusive at start, exclusive at the end 
-
-Example:
-
-```python
-number = int(input("Enter a football jersey number [1 to 11]: "))
-
-if number == 1:
-  print("Goalie")
-
-elif number in range(2, 6):
-  print("Defender")
-
-elif number in range(6, 10):
-  print("Midfielder")
-
-else:
-  print("Striker")
-```
-
----
-
-# Loops
-
-- Using while loops
-- Using for loops
-- Using for loops with a range
-- Unconditional jumps
-- Using else in a loop
-- Simulating do-while loops
-
----
-
-# Using while loops
-
-The while loop is the most straightforward loop construct
-
-```python
-while expression : 
-  loopBody
-```
-- Test expression is evaluated
-- If true, loop body is executed
-- Test expression is re-evaluated
-- Etc…
-
-Note:
-- Loop body will not be executed if test is false initially
-
-Example:
-
-```python
-print("Numbers from 1-5 inclusive")
-i = 1
-while i <= 5:
-  print(i)
-  i = i + 1
-```
-
----
-
-# Using for loops
-
-The for loop is different than in most languages
-- In Python, a for loop iterates over items in a sequence
-
-```python
-for item in sequence:
-  loopBody
-```
-
-Example:
-
-```python
-lottonumbers = [2, 7, 3, 12, 19, 1]
-
-for item in lottonumbers:
-  print(item)
-```
-
----
-
-# Using for loops with a range
-
-You can also use a for loop to iterate over a numeric range
-- Use range() to create a range of numbers
-- The for loop will iterate over these numbers
-
-Example:
-
-```python
-print("Numbers from 0-4 inclusive")
-for i in range(5):
-  print(i)
-  
-print("Numbers from 6-10 inclusive")
-for i in range(6, 11):
-  print(i)
-  
-print("First 5 odd numbers")
-for i in range(0, 9, 2):
-  print(i + 1)
-```
-
----
-
-# Unconditional jumps
-
-Python provides two ways to perform an unconditional jump in a loop
-- break
-- continue
-
-Example:
-
-```python
-magicnumber = int(input("What is the magic number? "))
-
-print("This loop terminates if it hits the magic number")
-for i in range(1, 21):
-  if i == magicnumber:
-    break
-  print(i)
-print("End")
-
-print("\nThis loop skips the magic number")
-for i in range(1, 21):
-  if i == magicnumber:
-    continue
-  print(i)
-print("End")
-```
-
----
-
-# Using else in a loop
-
-You can define an else clause at the end of a loop
-- Same kind of syntax as if…else
-- The else branch is executed if the loop terminates naturally (i.e. if it didn't exit because of a break)
+You can pass arguments to a function
+- In the function definition, declare the argument names in the parentheses
+- In the client code, pass argument values in the call
 
 Example
-```python
-magicnumber = int(input("What is the magic number? "))
 
-print("This loop does some processing if it doesn't detect the magic number")
-for i in range(1, 21):
-  if i == magicnumber:
-    break
-  print(i)
-else:
-  print("The magic number %d was not detected" % magicnumber)
+```python {all|1-3|1-3,6|1-3,7|all}
+def display_message(message, count):
+  for i in range(count):
+    print(message)
 
-print("End")
+# Usage (i.e. client code)
+display_message("Hello", 3)
+display_message("Goodbye", 1)
+```
+
+</v-clicks>
+
+---
+layout: two-cols
+---
+# Returning a value from a function
+
+Functions can return a value, via a return statement
+- If you don't return a value explicitly, the function returns None
+
+::right::
+
+Example:
+
+```python {all|1-2,15-16|4-5,18-19|7-11,21-22|all}
+def display_message(msg):
+  print(msg)
+
+def generate_hyperlink(href, text):
+  return "<a href='{0}'>{1}</a>".format(href, text)
+
+def get_number_in_range(msg, lower, upper):
+  while True:
+    num = int(input(msg))
+    if num >= lower and num < upper:
+      return num
+
+
+# Usage (i.e. client code)
+result1 = display_message("Hello world")
+print("result1 is %s" % result1)
+
+result2 = generate_hyperlink("http://www.bbc.co.uk", "BBC")
+print("result2 is %s" % result2)
+
+result3 = get_number_in_range("Favourite month? ", 1, 13)
+print("result3 is %s" % result3)
 ```
 
 ---
 
-# Simulating do-while loops
+# Understanding scope (1/2)
 
-Many languages have a do-while loop
-- Guarantees at least one iteration through the loop body
-- The test is at the end, to determine whether to repeat
+<v-clicks>
 
-Python doesn't have a do-while loop, but you can emulate it as follows
+If you declare a variable outside a function:
+- The variable is global to the module
+- Prefix the name with __ to make it private to this module
+
+If you declare a variable inside a function:
+- The variable is local to the function
+
+If you want to assign a global variable inside a function:
+- You must declare the variable inside the function, using the global keyword
+- Tells the Python interpreter it's an existing global name, not a new local name
+
+</v-clicks>
+
+---
+
+# Understanding scope (2/2)
+
+This example shows how to define and use global variables
+
+```python {all|1|4|6|11,14|all}
+__DBNAME = None
+
+def initDB(name):
+  global __DBNAME
+  if __DBNAME is None: 
+    __DBNAME = name
+  else:
+    raise RuntimeError("Database name has already been set.")
+
+def queryDB():
+  print("TODO, add code to query %s" % __DBNAME)
+
+def updateDB():
+  print("TODO, add code to update %s" % __DBNAME)
+
+
+# Usage (i.e. client code)
+initDB("Server=.;Database=Northwind")
+queryDB()
+updateDB()
+```
+
+---
+
+# Going further with functions
+
+- Default argument values
+- Variadic functions
+- Passing keyword arguments 
+- Variadic keyword arguments 
+- Built-in functions
+- Examples of using functions
+
+---
+
+# Default argument values
+
+<v-clicks>
+
+You can define default argument values for a function
+- In the function definition, specify default values as appropriate
+- In the client code, pass argument values or rely on defaults
+
+Example:
+
+```python {all|1|1,7|1,8|1,9|all}
+def book_flight(fromairport, toairport, numadults=1, numchildren=0):
+  print("\nFlight booked from %s to %s" % (fromairport, toairport))
+  print("Number of adults: %d" % numadults)
+  print("Number of children: %d" % numchildren)
+
+# Usage (i.e. client code)
+book_flight("BRS", "VER", 2, 2)
+book_flight("LHR", "VIE", 4)
+book_flight("LHR", "OSL")
+```
+
+</v-clicks>
+
+---
+
+# Variadic functions
+
+<v-clicks>
+
+Python allows you to define a function that can take any number of arguments
+- In the function definition, prefix the last argument name with *
+- Internally, these arguments will be wrapped up as a tuple
+- You can iterate through the tuple items by using a for loop
+
+Example
+
+```python {all|1|1,7|3-4,7|}
+def display_favourite_things(name, *things):
+  print("Favourite things for %s" % name)
+  for item in things:
+    print("  %s" % item)
+
+# Usage (i.e. client code)
+display_favourite_things("Kath", "Ethan", "Caleb", 3, "Reading", "Learning", "Climbing")
+```
+
+</v-clicks>
+
+---
+
+# Passing keyword arguments 
+
+<v-clicks>
+
+Client code can pass arguments by name
+- Use the syntax argument_name = value
+
+Useful if the function has a lot of default argument values
+- Client code can choose exactly which arguments to pass in
+
+Example:
+
+```python {all|1|1,7|1,8|1,9|all}
+def book_flight(fromairport, toairport, numadults=1, numchildren=0):
+  print("\nFlight booked from %s to %s" % (fromairport, toairport))
+  print("Number of adults: %d" % numadults)
+  print("Number of children: %d" % numchildren)
+
+# Usage (i.e. client code)
+book_flight("BRS", "VER", 2, 2)
+book_flight("LHR", "CDG", numchildren=2)
+book_flight(numchildren=3, fromairport="LGW", toairport="NCE")
+```
+</v-clicks>
+
+---
+
+# Variadic keyword arguments 
+
+<v-clicks>
+
+It's also possible to define variadic keyword arguments
+- Use ** rather than * on the argument
+- Allows you to pass in any number of keyword args
+
+Internally, the arguments are wrapped as a dictionary
+- You can iterate through the key/value pairs by using a for loop
+
+Example
+
+```python {all|1|1,6|2,3,6|all}
+def myfunc(**kwargs):
+  for k, v in kwargs.items(): 
+    print ("key %s, value %s" % (k, v)) 
+
+# Usage (i.e. client code)
+myfunc(favTeam="Ireland", favNum=3, favColour="green")
+```
+
+</v-clicks>
+
+---
+
+
+# Built-in functions
+
+[Python has a suite of built-in functions that are always available](https://docs.python.org/3/library/functions.html)
+
+---
+
+# Examples of Using Function (1/2)
+
+I've written some examples to illustrate how to use functions in realistic scenarios
+- Processing lines of text from a file
+- Using regular expressions to find particular values in the file
+
+Demo location
+Demos\04-Functions\WorkedExamples
+
+
+---
+
+# Examples of using functions (2/2)
+
+To open and read a file:
+- Call open() to open a file - returns a file handle
+- To read lines from the file, simply iterate over the file handle
+
+To use regular expressions:
+- The re module has compile() and search() functions to compile and use a regular expression
+
+Here's the first example:
 
 ```python
-while True:
-  exammark = int(input("Enter a valid exam mark: "))
-  if exammark >= 0 and exammark <= 100:
-    break
-  
-print("Your exam mark is %d" % exammark)
+import re
+
+pattern = re.compile('Attribute ID \(0xC2\)')
+
+with open('data.txt') as fh:
+    for line in fh:
+        result = pattern.search(line)
+        if result:
+            print(line)
 ```
 
 ---

@@ -37,8 +37,12 @@ drawings:
 - Testing a value is in a range
 
 ---
+layout: two-cols
+---
 
 # Using if tests 
+
+<v-clicks>
 
 Basic if tests
 
@@ -56,7 +60,14 @@ else:
   body2
 ```
 
+</v-clicks>
+
+::right::
+
+<div v-click="5">
+
 if-elif tests
+
 ```python
 if expression1 :
   body1
@@ -71,16 +82,26 @@ else :
   lastBody
 ```
 
+</div>
+
+<div v-click="6">
+
 Notes:
 - Test conditions can be any type of expression
 - Use indentation to indicate the extent of a block, i.e. don't use {}
 
----
+</div>
 
+
+---
+layout: two-cols
+---
 # Nesting if tests
 
 You can nest if tests inside each other
 - Use indentation to indicate level of nesting
+
+::right:: 
 
 Example:
 
@@ -128,6 +149,8 @@ print("%d years to retirement" % togo)
 
 # Doing nothing
 
+<v-clicks>
+
 If you're not sure what to do if a test is true…
 - You can use the pass statement
 - Equivalent to a null statement in other languages
@@ -143,16 +166,20 @@ if team == "Ireland":
 print("Your favourite team is %s " % team)
 ```
 
+</v-clicks>
+
 ---
 
 # Testing a value is in a set of values 
+
+<v-clicks>
 
 You can test if a value is in a set of allowable values
 - Use the in operator
 
 Example:
 
-```python
+```python {all|1|3-4|6-7|9-10|12-13|all}
 country = input("Please enter your country: ")
 
 if country in ("Netherlands", "Belgium", "Luxembourg"):
@@ -168,9 +195,13 @@ else:
   print("%s isn't classified in this particular application!" % country) 
 ```
 
+</v-clicks>
+
 ---
 
 # Testing a value is in a range
+
+<v-clicks>
 
 You can test if a value is in a range of allowable values
 - Call range(start,end) to return a range
@@ -178,7 +209,7 @@ You can test if a value is in a range of allowable values
 
 Example:
 
-```python
+```python {all|1|3-4|6-7|9-10|12-13}
 number = int(input("Enter a football jersey number [1 to 11]: "))
 
 if number == 1:
@@ -194,6 +225,8 @@ else:
   print("Striker")
 ```
 
+</v-clicks>
+
 ---
 
 # Loops
@@ -206,13 +239,17 @@ else:
 - Simulating do-while loops
 
 ---
+layout: two-cols
+---
 
 # Using while loops
+
+<v-clicks>
 
 The while loop is the most straightforward loop construct
 
 ```python
-while expression : 
+while expression: 
   loopBody
 ```
 - Test expression is evaluated
@@ -223,9 +260,16 @@ while expression :
 Note:
 - Loop body will not be executed if test is false initially
 
+</v-clicks>
+
+
+::right::
+
+<div v-click="6">
+
 Example:
 
-```python
+```python {all|2|3|4-5|3|4-5|all}
 print("Numbers from 1-5 inclusive")
 i = 1
 while i <= 5:
@@ -233,9 +277,13 @@ while i <= 5:
   i = i + 1
 ```
 
+</div>
+
 ---
 
 # Using for loops
+
+<v-clicks>
 
 The for loop is different than in most languages
 - In Python, a for loop iterates over items in a sequence
@@ -247,16 +295,20 @@ for item in sequence:
 
 Example:
 
-```python
+```python {all|3|4|all}
 lottonumbers = [2, 7, 3, 12, 19, 1]
 
 for item in lottonumbers:
   print(item)
 ```
 
+</v-clicks>
+
 ---
 
 # Using for loops with a range
+
+<v-clicks>
 
 You can also use a for loop to iterate over a numeric range
 - Use range() to create a range of numbers
@@ -264,7 +316,7 @@ You can also use a for loop to iterate over a numeric range
 
 Example:
 
-```python
+```python {all|1-3|5-7|9-11|all}
 print("Numbers from 0-4 inclusive")
 for i in range(5):
   print(i)
@@ -278,9 +330,13 @@ for i in range(0, 9, 2):
   print(i + 1)
 ```
 
+</v-clicks>
+
 ---
 
 # Unconditional jumps
+
+<v-clicks>
 
 Python provides two ways to perform an unconditional jump in a loop
 - break
@@ -288,7 +344,7 @@ Python provides two ways to perform an unconditional jump in a loop
 
 Example:
 
-```python
+```python {all|3-8|5|6|10-15|12|13|all}
 magicnumber = int(input("What is the magic number? "))
 
 print("This loop terminates if it hits the magic number")
@@ -306,16 +362,20 @@ for i in range(1, 21):
 print("End")
 ```
 
+</v-clicks>
+
 ---
 
 # Using else in a loop
+
+<v-clicks>
 
 You can define an else clause at the end of a loop
 - Same kind of syntax as if…else
 - The else branch is executed if the loop terminates naturally (i.e. if it didn't exit because of a break)
 
 Example
-```python
+```python {all|5|6|8-9|all}
 magicnumber = int(input("What is the magic number? "))
 
 print("This loop does some processing if it doesn't detect the magic number")
@@ -329,9 +389,13 @@ else:
 print("End")
 ```
 
+</v-clicks>
+
 ---
 
 # Simulating do-while loops
+
+<v-clicks>
 
 Many languages have a do-while loop
 - Guarantees at least one iteration through the loop body
@@ -339,7 +403,7 @@ Many languages have a do-while loop
 
 Python doesn't have a do-while loop, but you can emulate it as follows
 
-```python
+```python {all|1|3|4|all}
 while True:
   exammark = int(input("Enter a valid exam mark: "))
   if exammark >= 0 and exammark <= 100:
@@ -347,6 +411,8 @@ while True:
   
 print("Your exam mark is %d" % exammark)
 ```
+
+</v-clicks>
 
 ---
 
