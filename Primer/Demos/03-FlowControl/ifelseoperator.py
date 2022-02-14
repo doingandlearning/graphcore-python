@@ -1,6 +1,5 @@
-isMale = True
-age    = 21
-
-togo = (65 - age) if isMale else (60 - age)
-
-print("%d years to retirement" % togo)
+print("Numbers from 1-5 inclusive")
+i = 1
+while i <= 5:
+    print(i)
+    i = i + 1

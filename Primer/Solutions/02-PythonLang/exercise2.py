@@ -14,4 +14,4 @@ is_valid = "@" in email and len(pincode) == 4 and pincode.isdigit()
 if is_valid:
     print("Email address %s, pin code %s" % (email.lower(), pincode))
 else:
-    print("Your details are valid")
+    print("Your details are invalid")

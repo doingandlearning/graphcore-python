@@ -9,7 +9,7 @@ print("End")
 
 print("\nThis loop skips the magic number")
 for i in range(1, 21):
-  if i == magicnumber:
+  if user.validated == False:
     continue
   print(i)
 print("End")

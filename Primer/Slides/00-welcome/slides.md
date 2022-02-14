@@ -48,13 +48,12 @@ Grab repo at https://github.com/doingandlearning/graphcore-python
 
 |               |           |
 | ------------- | --------- |
-| 9.30 - 11     | Session 1 |
-| 11 - 11.15    | Coffee    |
-| 11.15 - 12.45 | Session 2 |
-| 12.45 - 1.45  | Lunch     |
-| 1.45 - 3.15   | Session 3 |
-| 3.15 - 3.30   | Coffee    |
-| 3.30 - 4.30   | Session 4 |
+| 9.30 - 10.45     | Session 1 |
+| 10.45 - 11    | Coffee    |
+| 12.00 - 1 | Lunch |
+| 1.00 - 2.30   | Session 3 |
+| 2.30 - 2.45   | Coffee    |
+| 2.45 - 4.30   | Session 4 |
 
 ---
 

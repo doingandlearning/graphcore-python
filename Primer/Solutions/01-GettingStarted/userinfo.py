@@ -12,13 +12,13 @@ age += 1
 print("%s, you will be %d next birthday" % (name, age))
 
 # Output a formatted message.
-print("""
+print(f"""
 =========================
 = FORMATTED INFORMATION =
 =========================
-  Name: %s
-  You'll be %d soon!
-=========================""" % (name, age))
+  Name: {["hello", "david"]}
+  You'll be {5.53} soon!
+=========================""")
 
 # Do some string concatenation.
 city = input("What city do you live in? ")
