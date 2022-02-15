@@ -4,9 +4,18 @@ class BankAccount:
     __nextId = 1
     __OVERDRAFT_LIMIT = -1000
 
+    def fromString(str):
+        str = str.rstrip("\r\n")
+        fields = str.split(",")
+        acc = BankAccount()
+        acc.id = int(fields[0])
+        acc.accountHolder = fields[1]
+        acc.__balance = float(fields[2])
+        return acc
+        
     def __init__(self, accountHolder="Anonymous"):
         self.accountHolder = accountHolder
-        self.__balance = 0.0
+        self.__balance = 0.0  # _BankAccount__balance
         self.id = BankAccount.__nextId
         BankAccount.__nextId += 1
 
@@ -23,23 +32,8 @@ class BankAccount:
         return self.__balance
 
     def toString(self):
-        return "{0} {1}, {2}".format(self.id, self.accountHolder, self.__balance)
+        return "{0},{1},{2}".format(self.id, self.accountHolder, self.__balance)
 
-    @classmethod		
-    def getOverdraftLimit(cls):
-        return cls.__OVERDRAFT_LIMIT
+    def getOverdraftLimit():
+        return BankAccount.__OVERDRAFT_LIMIT
 
-    @staticmethod		
-    def getBanner():
-        return "\nThis is the BankAccount Banner"
-
-
-# client code (invoking methods via class name)
-print(BankAccount.getBanner())
-print(BankAccount.getOverdraftLimit())
-
-acc1 = BankAccount("Luke")
-print(acc1.getBanner()) 
-print(acc1.getOverdraftLimit())
-
-		

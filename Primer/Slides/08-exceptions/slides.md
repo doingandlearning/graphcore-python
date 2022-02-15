@@ -40,6 +40,8 @@ drawings:
 
 # Overview
 
+<v-clicks>
+
 Exceptions are a run-time mechanism for indicating exceptional conditions in Python
 - If you detect an "exceptional" condition, you can throw an exception
 - An exception is an object that contains relevant error info
@@ -47,9 +49,13 @@ Exceptions are a run-time mechanism for indicating exceptional conditions in Pyt
 Somewhere up the call stack, the exception is caught and dealt with
 - If the exception is not caught, your application terminates
 
+</v-clicks>
+
 ---
 
 # Standard exceptions in Python
+
+<v-clicks>
 
 There are lots of things that can go wrong in a Python app
 - Therefore, there are lots of different exception classes
@@ -62,9 +68,13 @@ Here are some of the standard exception classes in Python:
 - ValueError
 - … etc.
 
+</v-clicks>
+
 ---
 
 # Simple exception example
+
+<v-clicks>
 
 Here's a simple example of how to deal with exceptions in a Python app
 - The try block contains code that might cause an exception
@@ -85,9 +95,13 @@ while True:
         print("Eek, that's not valid a number!")
 ```
 
+</v-clicks>
+
 ---
 
 # Accessing the exception object
+
+<v-clicks>
 
 In your except clause, you can specify a name for the exception object you just caught
 - Allows you to use the exception object in your except block
@@ -108,6 +122,8 @@ while True:
         print("ValueError occurred: %s" % err)
 ```
 
+</v-clicks>
+
 ---
 
 # 2. Additional Exception Techniques
@@ -122,6 +138,8 @@ while True:
 ---
 
 # Catching multiple exception types (1/2)
+
+<v-clicks>
 
 If your try block contains complex code, then multiple different types of exception might occur
 - You can define multiple except blocks, to catch each type of error
@@ -148,9 +166,13 @@ except:
     print("Some other error occurred")
 ```
 
+</v-clicks>
+
 ---
 
 # Catching multiple exception types (2/2)
+
+<v-clicks>
 
 If you want to perform the same processing for several types of exception:
 - Group the exceptions together in a single except block
@@ -172,9 +194,13 @@ except:
     print("Some other error occurred")
 ```
 
+</v-clicks>
+
 ---
 
 # The "all ok" scenario
+
+<v-clicks>
 
 You can add an else block at the end of try…except
 - Executed only if the try block completed successfully 
@@ -197,9 +223,13 @@ else:
     fh.close()	
 ```
 
+</v-clicks>
+
 ---
 
 # Unconditional "wrap-up" code
+
+<v-clicks>
 
 You can add a finally block at the end of everything
 - Always executed at the end of the try…except…else construct
@@ -226,9 +256,13 @@ finally:
     print("That's all folks. This message will always appear!")
 ```
 
+</v-clicks>
+
 ---
 
 # Exception hierarchies (1/2)
+
+<v-clicks>
 
 Python organizes exceptions into an inheritance hierarchy
 - Represents specializations of general error conditions
@@ -244,9 +278,13 @@ Example
             - PermissionError
             - ChildProcessError
 
+</v-clicks>
+
 ---
 
 # Exception hierarchies (2/2)
+
+<v-clicks>
 
 When you define an except block…
 - It will catch that exception type, plus any subclasses
@@ -273,9 +311,13 @@ except OSError as err:
 … plus other except blocks and an else block, as appropriate …
 ```
 
+</v-clicks>
+
 ---
 
 # Defining custom exception classes
+
+<v-clicks>
 
 You can define custom exception classes
 - To represent important types of error in your application
@@ -296,9 +338,13 @@ class MyError(Exception):
         return repr(self.value)
 ```
 
+</v-clicks>
+
 ---
 
 # Raising exceptions
+
+<v-clicks>
 
 To raise (i.e. trigger) an exception:
 - Use the raise keyword
@@ -314,6 +360,8 @@ try:
 except MyError as err:
     print("It appears my exception occurred, the value is %s" % err.value)	
 ```
+
+</v-clicks>
 
 ---
 

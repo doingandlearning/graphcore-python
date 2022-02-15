@@ -104,6 +104,8 @@ During OO analysis and design, you map the real world into candidate classes in 
 
 # General syntax for class declarations
 
+<v-clicks>
+
 General syntax for declaring a class:
 
 ```python
@@ -122,9 +124,13 @@ class BankAccount :
   #
 ```
 
+</v-clicks>
+
 ---
 
 # Creating objects
+
+<v-clicks>
 
 To create an instance (object) of the class:
 - Use the name of the class, followed by parentheses
@@ -143,6 +149,8 @@ from accounting import BankAccount
 acc1 = BankAccount()
 acc2 = BankAccount()
 ```
+
+</v-clicks>
 
 ---
 
@@ -230,6 +238,8 @@ acc2 = BankAccount("Wilma")
 
 # Making an object's attributes private
 
+<v-clicks>
+
 One of the goals of OO is encapsulation
 - Keep things as private as possible
 
@@ -253,6 +263,8 @@ class BankAccount:
     
     …
 ```
+
+</v-clicks>
 
 ---
 
@@ -292,6 +304,8 @@ class BankAccount:
 
 # Class-wide variables (1/2)
 
+<v-clicks>
+
 Class-wide variables belong to the class as a whole
 - Allocated once, before usage of first object
 - Remain allocated regardless of number of objects
@@ -308,6 +322,8 @@ class BankAccount:
 
 To access the class-wide variable in methods:
 - Prefix with the class name
+
+</v-clicks>
 
 ---
 
@@ -344,6 +360,8 @@ class BankAccount:
 
 # Class-wide methods
 
+<v-clicks>
+
 Typical uses for class-wide methods:
 - Get/set class-wide variables
 - Factory methods, responsible for creating instances
@@ -367,6 +385,8 @@ Client code:
 ```python
 print("Overdraft limit for all accounts is %d" % BankAccount.getOverdraftLimit())
 ```
+
+</v-clicks>
 
 ---
 
