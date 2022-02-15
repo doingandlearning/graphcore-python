@@ -8,6 +8,8 @@ def get_numbers() :
     return numbers
 
 def is_prime(number):
+    if number <= 1:
+        return False
     if number <= 3:
         return True
     if number % 2 == 0:

@@ -1,7 +1,9 @@
 str = "and we were singing, hymns and arias, land of my fathers, ar hyd yr nos"
 
-words = str.split(", ")
+words = str.split()
 
-lines = "...\n".join(words)
+print(words)
 
+lines = "".join(words)
+#
 print("%s" % lines)

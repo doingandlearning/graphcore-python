@@ -6,6 +6,18 @@ year  = int(input("Enter a year (0 to 2099): "))
 # Determine if it's a leapyear.
 isLeapYear = ((year % 4 == 0) and not(year % 100 == 0)) or (year % 400 == 0)
 
+def is_leap_year(test_year):
+    return ((test_year % 4 == 0) and not(test_year % 100 == 0)) or (test_year % 400 == 0)
+
+def get_days_in_month(test_month, test_year):
+    if test_month == 2:
+        daysInMonth = 29 if is_leap_year(test_year) else 28
+    elif test_month in (4, 6, 9, 11):
+        daysInMonth = 30
+    else:
+        daysInMonth = 31
+    return daysInMonth
+
 # Determine if it's a valid date.    
 if month == 2:
     daysInMonth = 29 if isLeapYear else 28

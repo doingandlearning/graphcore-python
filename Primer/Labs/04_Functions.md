@@ -1,6 +1,6 @@
 # Functions
 
-# Overview
+## Overview
 In this lab, you’ll refactor the date processing code from the previous lab, so that it makes appropriate use of functions. This will make the code more readable, and will also aid reuse. You'll also explore the use of default arguments along the way.
 
 If time permits, you'll have a go at defining variadic functions.

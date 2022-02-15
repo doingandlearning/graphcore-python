@@ -7,7 +7,7 @@ def process_line(line, fhOut):
     result = reObj.search(line)
     if result:
         global lineNumber
-        str = '[{0:03d}]: {1}'.format(lineNumber, line)
+        str = f'[{lineNumber:03d}]: {line}'
         fhOut.write(str)
         lineNumber += 1
 

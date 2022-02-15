@@ -5,7 +5,7 @@ list4 = list()
 list5 = list(list3)
 list6 = list("Hello")
 
-print("list1 has %d items: %s" % (len(list1), list1))
+print(f"list1 has {len(list1)} items: {list1}")
 print("list2 has %d items: %s" % (len(list2), list2))
 print("list3 has %d items: %s" % (len(list3), list3))
 print("list4 has %d items: %s" % (len(list4), list4))

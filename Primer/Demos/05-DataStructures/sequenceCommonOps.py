@@ -1,5 +1,5 @@
-euro = ["GB", "ES", "NL", "F", "D", "I", "P"]
-asia = ["SG", "JP"]
+euro = ["GB", "ES", "NL", "F", "D", "I", "P", "SW"]
+asia = ["SG", "JP", "HK"]
 
 try:
 	print("%s" % "F" in euro)               # True

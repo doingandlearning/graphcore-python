@@ -10,8 +10,5 @@
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*"
   },
-  "name": "01-getting-started-with-react",
-  "devDependencies": {
-    "playwright-chromium": "^1.19.0"
-  }
+  "name": "01-getting-started-with-react"
 }

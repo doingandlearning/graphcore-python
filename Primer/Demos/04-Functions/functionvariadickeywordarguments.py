@@ -1,7 +1,9 @@
 # This function has variadic keyword arguments.
 def myfunc(**kwargs):
-  for key, value in kwargs.items(): 
-    print("key %s, value %s" % (key, value)) 
+  if kwargs["colour"]:
+    print(kwargs['colour'])
+
+myfunc(favTeam="Swans", favNum=3, favColour="red", colour = "red")
 
 # This function has variadic positional arguments and variadic keyword arguments.
 def myfunc2(*args, **kwargs):
@@ -11,11 +13,24 @@ def myfunc2(*args, **kwargs):
 
   print("Variadic keyword args:")
   for key, value in kwargs.items(): 
-    print ("  key %s, value %s" % (key, value)) 
+    print ("  key %s, value %s" % (key, value))
 
-# Usage of myfunc():
-myfunc(favTeam="Swans", favNum=3, favColour="red")
 
-# Usage of myfunc2():
-myfunc2("Ole", "Dole", "Doffen", favTeam="Swans", favNum=3)
 
+# Usage of myfunc():def myfunc(**kwargs):
+
+
+#   for k, v in kwargs.items():
+#     print ("key %s, value %s" % (k, v))
+#
+# # Usage (i.e. client code)
+# myfunc(favTeam="Ireland", favNum=3, favColour="green")
+
+#
+# # Usage of myfunc2():
+# myfunc2("Ole", "Dole", "Doffen", favTeam="Swans", favNum=3)
+
+def add_number(*nums):
+  pass
+
+add_number(1,2,12,121)

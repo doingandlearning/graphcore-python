@@ -20,7 +20,7 @@ def process_attribute_data(fh, line):
     global count
     count += 1
 	
-    print("[%d] %s" % (count, line))
+    print(f"[{count}] {line}")
     
     for line in fh:
         result = data_pattern.search(line)
@@ -35,8 +35,11 @@ def process_attribute_data(fh, line):
 			
 # Convert a string of hex in the format "XX XX" into a decimal (i.e. denary) number.	
 def parse_hex_bytes(str):
+    # "00 48"
     nums = str.split()
+    # ["00", "48"]
     hex = nums[0] + nums[1]
+    # "0048"
     dec = int(hex, 16)
 
 	# If the top bit is set, treat the number as negative. E.g. convert FFFF to -1.
