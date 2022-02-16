@@ -19,3 +19,10 @@ info: |
 drawings:
   persist: false
 ---
+
+# GraphCore Requests
+
+---
+
+1. Spawning other processes (subprocess)
+2. Regular Expressions
