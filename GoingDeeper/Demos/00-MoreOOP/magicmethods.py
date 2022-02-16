@@ -13,7 +13,7 @@ class Person:
                                                       self.__class__.__name__,\
                                                       self.name, self.age)
     def __str__(self):
-        return "{0} is {1}.".format(self.name, self.age)
+        return f"{self.name} is {self.age}."
 
     def __eq__(self, other):
         return self.age == other.age
@@ -30,7 +30,7 @@ class Person:
     def __le__(self, other):
         return self.age <= other.age
 
-    def __ge__(self, other):
+    def __ge__(self, other
         return self.age >= other.age
 
 

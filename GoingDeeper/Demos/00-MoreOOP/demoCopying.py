@@ -1,5 +1,7 @@
 from accounting import BankAccount
+
 from copy import copy
+
 
 print("\nInitially...")
 acc1a = BankAccount("Fred")

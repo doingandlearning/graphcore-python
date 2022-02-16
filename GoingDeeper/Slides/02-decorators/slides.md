@@ -273,7 +273,8 @@ def myfunc1(firstName, lastName, nationality) :
 </v-clicks>
 
 ---
-
+layout: two-cols
+---
 # Defining a Parameterized Decorator
 
 Here's how to define a parameterized decorator
@@ -298,16 +299,18 @@ def parameterizedDecorator(prefix, suffix) :
     return innerFunc1
 ```
 
+::right::
+
 We have a layering of functions, to handle all the args:
 - Arguments to the decorator itself
 - The target function to be invoked
 - Arguments to pass in to the target function
 
 ---
-
+layout: two-cols
+---
 # Applying a Parameterized Decorator Manually 
 
-<v-clicks>
 
 In order to understand how parameterized decorators work, let's first see how to apply the decorator manually:
 
@@ -321,6 +324,12 @@ pointerToInnerFunc1 = parameterizedDecorator("HELLO", "GOODBYE")
 pointerToInnerFunc2 = pointerToInnerFunc1(myfunc1)                
 res = pointerToInnerFunc2("Per", "Nordmann", "Norsk")            
 ```
+
+
+
+::right::
+
+<v-clicks>
 
 Line 6 calls the decorator manually, passing args into it
 - This statement returns a pointer to innerFunc1

@@ -256,7 +256,7 @@ A closure is a function whose behaviour depends on variables declared outside th
 - This is often used when returning functions/lambdas
 - The returned function/lambda remembers the original state in the enclosing function
 
-```python
+```python {all|1|2|4|6,7,2|all}
 def banner(start, end) :
     return lambda msg: print(f"{start} {message} {end}")
 
@@ -276,7 +276,7 @@ bannerMsg("World")
 
 Here, fib returns a function that calculates Fibonacci numbers, returns the next one each time called
 
-```python {}
+```python {all|2|4|5|6|8|all}
 def fib():
     tup = (1,-1)
     def retfunc():
@@ -311,7 +311,7 @@ tup is a tuple, and you access its members using [0] and [1]
 Recursion is commonly used instead of looping
 - It avoids the mutable state associated with loop counters
 
-```python
+```python {all|2|4,5|2|4,5|2|all}
 def factorial(n):
     if n == 0:
         return 1

@@ -717,6 +717,7 @@ print('\nSorted down rows  \n', np.sort(b, axis=0))
 Notes:
 - For multidimensional arrays, the default axis of partitioning is 0
 - There's also a sort() instance method, sorts in-place
+- There's also a sort() instance method, sorts in-place
 
 ---
 

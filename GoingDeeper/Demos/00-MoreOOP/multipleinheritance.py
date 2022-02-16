@@ -1,15 +1,15 @@
-import winsound
+# import winsound
 
 class Logger:
 
     def log(self, msg):
         print(msg)
 
-
 class Beeper:
 
     def beep(self, duration):
-        winsound.Beep(2500, duration)
+        pass
+        # winsound.Beep(2500, duration)
 
 
 class Alerter(Logger, Beeper):
@@ -31,14 +31,16 @@ class Alerter(Logger, Beeper):
 alerter = Alerter()
 
 alerter.log("Wakey wakey!")
-for i in range(30):
-    alerter.beep(50)
+# for i in range(30):
+#     alerter.beep(50)
+#
+# msg = input("Enter an alert message: ")
+# alerter.doShortAlert(msg)
+#
+# msg = input("Enter another alert message: ")
+# alerter.doMediumAlert(msg)
+#
+# msg = input("And another: ")
+# alerter.doLongAlert(msg)
 
-msg = input("Enter an alert message: ")
-alerter.doShortAlert(msg)
-
-msg = input("Enter another alert message: ")
-alerter.doMediumAlert(msg)
-
-msg = input("And another: ")
-alerter.doLongAlert(msg)
+help(Alerter())

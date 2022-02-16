@@ -65,8 +65,8 @@ You can schedule concurrent tasks on a single thread
 - The event loop manages task execution on a thread
 
 The event loop can optimize I/O
-- If a function is waiting on I/O…
-- The event loop pauses the function and runs another one instead…
+- If a function is waiting on I/O
+- The event loop pauses the function and runs another one instead
 - When the first function completes I/O, it is resumed
 
 The event loop can also optimize CPU-intensive functions
@@ -120,6 +120,8 @@ asyncio.create_task()
 </v-clicks>
 
 ---
+layout: two-cols
+---
 
 # Simple example of asynchrony
 
@@ -141,6 +143,8 @@ def main():
 if __name__ == "__main__" :
     main()
 ```
+
+::right::
 
 <v-clicks>
 
@@ -211,12 +215,16 @@ if __name__ == "__main__" :
 ```
 
 ---
+layout: two-cols
+---
 
 # Creating and awaiting multiple tasks
 
 You can create multiple tasks
 - All the tasks run concurrently
 - You can await for each task to complete individually
+
+::right::
 
 ```python
 async def main():

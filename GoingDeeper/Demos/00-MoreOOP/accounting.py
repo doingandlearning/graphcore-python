@@ -54,5 +54,6 @@ class SavingsAccount(BankAccount):
 
     def __str__(self):
         baseStr = super().__str__()
-        return "{0}, {1}".format(baseStr, self.interestRate)
+        return f"{baseStr}, {self.interestRate}"
 
+help(SavingsAccount())
