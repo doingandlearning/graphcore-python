@@ -28,5 +28,5 @@ res1 = myfunc1("Kari", "Nordmann", "Norsk")
 print(res1)
 
 print("###Invoke myfunc1() and pass keyword parameters, and get the result")
-res2 = myfunc1(nationality="Cymraeg", lastName="Olsen", firstName="Andy")
+res2 = myfunc1(nationality="Cymraeg", lastName="Cunningham", firstName="Kevin")
 print(res2)

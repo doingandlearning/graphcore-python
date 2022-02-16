@@ -2,7 +2,7 @@
 import json
 
 # A Python dictionary.
-person = {"name": "Andy", "age": 21, "height": 1.67, "isWelsh": True }
+person = {"name": "Kevin", "age": 21, "height": 1.67, "isWelsh": True }
 
 # Dump Python dictionary into a JSON string. 
 personJson = json.dumps(person, indent=4)  

@@ -4,6 +4,10 @@ set3 = set(("dog", "ant", "bat", "cat", "dog"))
 set4 = set("abracadabra")
 set5 = {c.upper() for c in "abracadabra"}
 
+list1 = [1,2,1,2,1,2]
+
+print(list(set(list1)))
+
 print("set1 has %d items: %s" % (len(set1), set1))
 print("set2 has %d items: %s" % (len(set2), set2))
 print("set3 has %d items: %s" % (len(set3), set3))

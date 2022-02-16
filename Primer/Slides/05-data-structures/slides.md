@@ -704,7 +704,7 @@ The sorted() function takes two optional arguments, which allow you to take cont
 Example
 
 ```python
-names = ["Andy", "Jayne", "Em", "Tom"]
+names = ["Kevin", "Jayne", "Em", "Tom"]
 
 sortedNamesAlphabetically = sorted(names)
 print(sortedNamesAlphabetically)
@@ -727,7 +727,7 @@ JSON is a popular string data format
 Here are some example JSON strings:
 
 ```python
-personJson = '{ "name": "Andy", "age": 21, "height": 1.67, "isWelsh": true }'
+personJson = '{ "name": "Kevin", "age": 21, "height": 1.67, "isWelsh": true }'
 coordsJson = '[ { "x": 100, "y": 150 }, { "x": 200, "y": 250 } ]'
 ```
 
@@ -744,7 +744,7 @@ These examples show how to load JSON data into Python data structures
 ```python
 import json
 
-personJson = '{"name": "Andy", "age": 21, "height": 1.67, "isWelsh": true }'
+personJson = '{"name": "Kevin", "age": 21, "height": 1.67, "isWelsh": true }'
 
 person = json.loads(personJson)
 
@@ -775,7 +775,7 @@ These examples show how to dump Python data into a JSON string
 ```python
 import json
 
-person = {"name": "Andy", "age": 21, "height": 1.67, "isWelsh": True }
+person = {"name": "Kevin", "age": 21, "height": 1.67, "isWelsh": True }
 
 personJson = json.dumps(person, indent=4)  
 

@@ -26,4 +26,4 @@ print("###Invoke myfunc1() and pass positional parameters")
 myfunc1("Ola", "Nordmann", "Norsk")
 
 print("###Invoke myfunc1() and pass keyword parameters")
-myfunc1(nationality="Cymraeg", lastName="Olsen", firstName="Jayne")
+myfunc1(nationality="Cymraeg", lastName="Cunningham", firstName="Jayne")

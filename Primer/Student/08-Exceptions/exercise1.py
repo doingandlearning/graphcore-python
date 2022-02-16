@@ -1,6 +1,12 @@
 import math
 
-r = float(input("Enter radius: "))
+while True:
+    try:
+        r = float(input("Enter radius: "))
+        break
+    except ValueError as err:
+        print(f"Whoops! {err}")
+
 
 diameter      = 2 * r
 circle_area   = math.pi * r ** 2

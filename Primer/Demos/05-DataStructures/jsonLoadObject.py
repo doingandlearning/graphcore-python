@@ -2,7 +2,7 @@
 import json
 
 # A simple string of JSON data.
-personJson = '{"name": "Andy", "age": 21, "height": 1.67, "isWelsh": true }'
+personJson = '{"name": "Kevin", "age": 21, "height": 1.67, "isWelsh": true }'
 
 # Load JSON string into a Python dictionary. 
 person = json.loads(personJson)  

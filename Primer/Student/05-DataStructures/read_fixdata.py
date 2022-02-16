@@ -9,7 +9,12 @@ __kvseparator = "="
 
 # Function to split a line of FIX data into tokens, using __tokenseperator as the separator.        
 def tokenize_line(line):
-
+    tokens = line.split(__tokenseparator)
+    fix_key_values = dict()
+    for token in tokens:
+        key, value = token.split(__kvseparator)
+        fix_key_values[key] = value
+    return fix_key_values
     # TODO 2a: 
     # Split the line of text into tokens, using __tokenseperator as the separator.
 
@@ -27,6 +32,15 @@ def tokenize_line(line):
     
 # Function to process a dictionary of FIX key/value pairs.
 def process_data(datadict):
+    for k,v in datadict.items():
+        if k == "8":
+            proc8(v)
+        elif k == "9":
+            proc9(v)
+        elif k == "35":
+            proc35(v)
+        else:
+            proc_other(v)
 
     # TODO 3:
 	# Loop through all the key/value pairs in datadict. For each key/value pair, do the following:

@@ -1,7 +1,7 @@
 def personNameLength(p) :
     return len(p)
     
-names = ["Andy", "Jayne", "Em", "Tom"]
+names = ["Kevin", "Jayne", "Em", "Tom"]
 
 sortedNamesAlphabetically = sorted(names)
 print(sortedNamesAlphabetically)

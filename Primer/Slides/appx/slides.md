@@ -36,7 +36,6 @@ drawings:
 - Freezing
 - Installing
 
-
 ---
 
 # virtualenv
@@ -90,9 +89,6 @@ Note: This will synchronise the requirements but will still need you and your co
 
 # Using subprocess
 
-- Running commands
-- Capturing the output (stdout, stderr)
-- 
 
 ---
 

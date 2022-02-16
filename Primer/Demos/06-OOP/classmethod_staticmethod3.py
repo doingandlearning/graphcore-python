@@ -16,3 +16,14 @@ class Pizza:
     def circle_area(r):
         return r ** 2 * math.pi
 
+    @classmethod
+    def cheese (cls, radius):
+        return cls(radius, "cheese")
+
+cheesePizza = Pizza.cheese(9)
+cheesePizza2 = Pizza(9, "cheese")
+
+print(cheesePizza)
+print(cheesePizza2)
+
+

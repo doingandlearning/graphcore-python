@@ -1,8 +1,8 @@
 dialcodes = {"us": "+1", "nl": "+31", "no": "+47"}
 
 print("Items:")
-for k,v in dialcodes.items():
-    print(k, v)
+for keys,values in dialcodes.items():
+    print(keys, values)
 
 print("\nKeys:")
 for k in dialcodes.keys():
