@@ -38,12 +38,12 @@ Run the code in clientcode.py. It should all still work nicely.
  
 # Exercise 2:  Implementing operator methods
 Go back to company.py and add methods to support the following relational operators for Employee objects (these methods should compare Employee objects based on their salary):
-- ==
-- !=
-- <
-- >
-- <=
-- >=
+- `==`
+- `!=`
+- `<`
+- `>`
+- `<=`
+- `>=`
  
 Add code in clientcode.py to compare the two employees, to test all the above operators.
 

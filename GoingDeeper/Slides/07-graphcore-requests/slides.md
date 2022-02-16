@@ -26,3 +26,29 @@ drawings:
 
 1. Spawning other processes (subprocess)
 2. Regular Expressions
+3. LabView
+
+---
+
+# Spawning Other Processes
+
+---
+
+# Regular Expressions
+
+- Overview
+- Usage
+
+---
+
+# Overview
+
+<v-clicks>
+
+- A domain specific language which defines a grammar for expressing string comparisons
+- 
+
+</v-clicks>
+
+
+
