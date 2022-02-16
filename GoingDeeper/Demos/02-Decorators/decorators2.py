@@ -1,11 +1,14 @@
+
+
 #---Start of decorator---------------------------------------------------
-def simpleDecorator(func) :
+def simpleDecorator(func):
 
     # Define an inner function, wraps the decorated func.
-    def innerFunc() :
+    def innerFunc(*args, **kwargs):
         print("Start of simpleDecorator()")    
-        func()
+        returnValue = func(*args, **kwargs)
         print("End of simpleDecorator()")
+        return returnValue
    
     # Return the inner function.
     return innerFunc
@@ -15,12 +18,18 @@ def simpleDecorator(func) :
 
 # Some function, which we now decorate explicitly.
 @simpleDecorator
-def myfunc1() :
-    print("Hi from myfunc1()")
+def myfunc1(first_name, last_name, nationality):
+    print(f"{first_name} {last_name} is {nationality}")
+    return True
+
+def myfunc2():
+    pass
   
-  
+
   
 #---Client code----------------------------------------------------------
 
 print("###No need to manually wrap myfunc1 now, just invoke it directly...")
-myfunc1()
+result = myfunc1("Kevin", "Cunningham", "Northern Irish")
+
+print(result)

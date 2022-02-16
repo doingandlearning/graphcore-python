@@ -46,7 +46,8 @@ class Employee:
 
     def __ge__(self, other):
         return self._salary >= other._salary
-        
+
+
     # Class methods.
     def getMinimumSalary():
         return Employee.__minimumSalary

@@ -503,7 +503,7 @@ You can combine Boolean operations together
 ```python
 import numpy as np
 
-def process_marks(m):
+def process_marks(m)
     print('\nExam marks\n',               m)
     print('B?\n',                       (m >= 60) & (m < 70))
     print('A or U?\n',                  (m >= 70) | (m < 30))
@@ -531,7 +531,7 @@ You can perform various aggregation operations on the Boolean result arrays
 ```python
 import numpy as np
 
-def process_marks(m):
+def process_marks(m)
     print('\nExam marks\n',  m)
     print('All passes?    ', np.all(m >= 50))
     print('Any passes?    ', np.any(m >= 50))
@@ -555,8 +555,7 @@ You can use a Boolean result matrix as a mask
 
 ```python
 import numpy as np
-
-def process_marks(m):
+def process_marks(m)
     print('\nPasses      ', m[m >= 50])
     print('B marks     ', m[(m >= 60) & (m < 70)])
     print('A or U marks', m[(m >= 70) | (m < 30)])

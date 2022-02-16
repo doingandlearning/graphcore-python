@@ -1,3 +1,5 @@
+from timeit import timeit
+
 #---Start of decorator---------------------------------------------------
 def returnAwareDecorator(func) :
 

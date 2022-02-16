@@ -11,11 +11,15 @@ def fib() :
 
 
 f = fib()
+f2 = fib()
+
+print(f2())
 print(f())    # 0
 print(f())    # 1
 print(f())    # 1
 print(f())    # 2
 print(f())    # 3
+print(f2())
 print(f())    # 5
 print(f())    # 8
 

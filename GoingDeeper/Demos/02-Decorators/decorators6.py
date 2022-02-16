@@ -32,5 +32,5 @@ def myfunc1(firstName, lastName, nationality) :
 res1 = myfunc1("Kari", "Nordmann", "Norsk")
 print(res1)
 
-res2 = myfunc1(nationality="Cymraeg", lastName="Cunningham", firstName="Kevin")
+res2 = myfunc1(nationality="Irish", lastName="Cunningham", firstName="Kevin")
 print(res2)

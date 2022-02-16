@@ -3,6 +3,8 @@ def banner(start, end) :
 
 
 bannerMsg = banner("[---", "---]")
+altMsg = banner("***", "!!!!")
 
 bannerMsg("Hello")
 bannerMsg("World")
+altMsg("Alt  message")

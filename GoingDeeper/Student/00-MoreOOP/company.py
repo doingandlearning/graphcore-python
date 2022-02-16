@@ -25,7 +25,7 @@ class Employee:
            (max is None or self.__salary <= max):
             self.__salary *= 1 + percentBonus / 100    
     
-    def toString(self):
+    def __str__(self):
         return "[{0}] {1} earns {2}, joined {3}".format(self.__id, self.__name, self.__salary, self.__joined.strftime("%c"))    
 
 
@@ -35,3 +35,28 @@ class Employee:
 
     def setMinimumSalary(s):
         Employee.__minimumSalary = s
+
+    def __eq__(self, other):
+        return self.__salary == other.__salary
+
+    def __ne__(self, other):
+        return self.__salary != other.__salary
+
+    def __lt__(self, other):
+        return self.__salary < other.__salary
+
+    def __le__(self, other):
+        return self.__salary <= other.__salary
+
+    def __ge__(self, other):
+        return self.__salary >= other.__salary
+
+class Programmer(Employee):
+    def __init__(self, name, salary):
+        super().__init__(name, salary)
+        self.skills = {}
+
+    def add_skill(self, skill, level):
+        self.skills[skill] = level
+
+    def
