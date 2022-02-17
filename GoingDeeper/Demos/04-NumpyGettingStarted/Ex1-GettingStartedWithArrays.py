@@ -1,4 +1,3 @@
-# Import the NumPy module. 
 import numpy as np
 
 # Create a 1D Numpy array from a Python list.

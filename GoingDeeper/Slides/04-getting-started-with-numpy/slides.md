@@ -121,6 +121,8 @@ Why are NumPy arrays more efficient than Python lists?
 </v-clicks>
 
 ---
+layout: two-cols
+---
 
 # Getting Started with NumPy arrays (2/2)
 
@@ -131,8 +133,14 @@ Example
 - Gets the shape of the array, via the shape property 
 - Gets the data type of array elements, via the dtype property
 
-```python
-# Import the NumPy module. 
+For a full list of NumPy standard types, see:
+- https://numpy.org/devdocs/user/basics.types.html
+
+</v-clicks>
+
+::right::
+
+```python {all|4|5|6|7}
 import numpy as np
 
 # Create a 1D NumPy array from a Python list.
@@ -148,10 +156,7 @@ print('Shape of b:', b.shape)
 print('Data type in b:', b.dtype)
 ```
 
-For a full list of NumPy standard types, see:
-- https://numpy.org/devdocs/user/basics.types.html
 
-</v-clicks>
 
 ---
 
@@ -159,33 +164,17 @@ For a full list of NumPy standard types, see:
 
 There are lots of ways to create a NumPy array
 
-```python
+```python {all|3|4|5|6|7|8|9|10|all}
 import numpy as np
 
-# Create array with mixed types - NumPy converts elements "upwards".
-a = np.array([1, 2, 3.14])
-
-# Create array with a specified type.
-b = np.array([1, 2, 3], dtype='float64')
-
-# Create array from a numeric range.
-c = np.arange(0, 20, 2)
-
-# Create array of elements, linear spaced. 
-d = np.linspace(0.0, 1.0, 11)
-
-# Create array of zeros. 
-# You can specify multi-dim arrays too.
-e = np.zeros(5)   
-
-# Create array of ones.
-f = np.ones(5)   
-
-# Create array of elements, with specified value.
-g = np.full(5, 1.23)
-
-# Create array of elements, no specified value.
-h = np.empty(5)
+a = np.array([1, 2, 3.14]) # Create array with mixed types - NumPy converts elements "upwards".
+b = np.array([1, 2, 3], dtype='float64') # Create array with a specified type.
+c = np.arange(0, 20, 2) # Create array from a numeric range.
+d = np.linspace(0.0, 1.0, 11) # Create array of elements, linear spaced. 
+e = np.zeros(5) # Create array of zeros. 
+f = np.ones(5)   # Create array of ones.
+g = np.full(5, 1.23) # Create array of elements, with specified value.
+h = np.empty(5) # Create array of elements, no specified value.
 ```
 
 ---
@@ -285,6 +274,8 @@ plt.show()
 - Aside: Views vs. copies
 
 ---
+layout: two-cols
+---
 
 # Indexing into an array
 
@@ -292,6 +283,8 @@ Indexing into a NumPy array is quite intuitive
 - [i]	Access element from start, first element is at [0]
 - [-i]	Access element from end, last element is at [-1]
 - [r,c]	Access element in 2-D array (etc. for higher dimensions)
+
+::right::
 
 ```python
 import numpy as np
@@ -316,13 +309,16 @@ print(b)
 ```
 
 ---
-
+layout: two-cols
+---
 # Slicing an array
 
 You can slice into an array using a [start:stop:step] index
 - start	Default start is 0
 - stop	Default stop is the size of the dimension
 - step	Default step is 1
+
+::right::
 
 ```python
 import numpy as np
@@ -346,6 +342,8 @@ print(b[::2, ::2])   # [ [ 0 20] [60 80] ]
 ```
 
 ---
+layout: two-cols
+---
 
 # Accessing a specific column or row
 
@@ -353,6 +351,8 @@ To get a specific column or row in a multidimension array:
 - Use an empty slice to skip a dimension
 - E.g. in a 2D array, [:,1] gets column 1
 - E.g. in a 2D array, [1,:] gets row 1
+
+::right::
 
 ```python
 import numpy as np
@@ -376,6 +376,8 @@ print(a[2])      # [60 70 80]
 ```
 
 ---
+layout: two-cols
+---
 
 # Aside: Views vs. copies
 
@@ -384,6 +386,8 @@ When you get an array slice/row/column, you get a view on the data
 
 If you want to get a copy of the data:
 - Call copy() on the slice/row/column
+
+::right::
 
 ```python
 import numpy as np
@@ -414,6 +418,8 @@ print(b)   # [[ 0  10  20] [ 30  40  50] [60  70  80]]
 - Splitting an array
 
 ---
+layout: two-cols
+---
 
 # Reshaping an array
 
@@ -421,6 +427,8 @@ Reshaping is a simple and common technique for creating multidimensional arrays
 - Create a 1D array initially (typically)
 - Reshape it to a multidimensional array (must be compatible shape)
 - The multidimensional array is a view onto the original 1D array
+
+::right::
 
 ```python
 import numpy as np
@@ -544,6 +552,8 @@ print(result2.shape)   # (2, 3)
 ```
 
 ---
+layout: two-cols
+---
 
 # Splitting an array
 
@@ -551,6 +561,8 @@ You can split an array into subarrays
 - np.split()
 - np.vsplit()
 - np.hsplit()
+
+::right::
 
 ```python
 import numpy as np

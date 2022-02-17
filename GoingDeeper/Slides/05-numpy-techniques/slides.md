@@ -113,11 +113,14 @@ print('Execution time using a universal function', end - start)
 ```
 
 ---
-
+layout: two-cols
+---
 # Arithmetic
 
 NumPy implements all the usual arithmetic operators as universal functions 
 - You can use an operator directly, or call the equivalent function
+
+::right::
 
 ```python
 import numpy as np
@@ -168,10 +171,14 @@ print('Power  ', np.power.accumulate(a))
 ```
 
 ---
+layout: two-cols
+---
 
 # Additional math functions
 
 NumPy has universal functions for trig, log, etc.
+
+::right::
 
 ```python
 import numpy as np
@@ -237,7 +244,7 @@ NumPy aggregation functions look very similar to functions available in the stan
 
 Consider the following example:
 
-```python
+```python {all|4|6-9|11-14|all}
 import numpy as np
 from timeit import default_timer as timer
 
@@ -576,12 +583,16 @@ process_marks(our_exam_marks)
 - Sorting
 
 ---
+layout: two-cols
+---
 
 # Fancy indexing (1/3)
 
 Often you want to get several elements at specific indices
 - You can pass an array of indices into []
 - Returns a result array with the elements from those indices
+
+::right::
 
 ```python
 import numpy as np
@@ -630,11 +641,15 @@ print('result      ', result)
 ```
 
 ---
+layout: two-cols
+---
 
 # Fancy indexing (3/3)
 
 You can combine fancy indexing with other techniques
 - E.g. regular indexing, slicing, masking
+
+::right::
 
 ```python
 import numpy as np
@@ -662,13 +677,23 @@ print('result3\n',       result3)
 ```
 
 ---
-
+layout: two-cols
+---
 # Partitioning
 
 <v-clicks>
 
 You can partition an array via partition()
 - You specify an index position, returns an array where all elements up to that position are smaller than all values after that position
+
+Notes:
+- Elements are unsorted within each partition
+- For multidimensional arrays, the default axis of partitioning is 0
+- There's also a partition() instance method, partitions in-place
+
+</v-clicks>
+
+::right::
 
 ```python
 import numpy as np
@@ -686,12 +711,6 @@ print('\nPartitioned at row index 2\n', np.partition(b, 2, axis=0))
 print('\nPartitioned at row index 4\n', np.partition(b, 4, axis=0))
 ```
 
-Notes:
-- Elements are unsorted within each partition
-- For multidimensional arrays, the default axis of partitioning is 0
-- There's also a partition() instance method, partitions in-place
-
-</v-clicks>
 
 ---
 

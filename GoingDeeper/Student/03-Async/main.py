@@ -5,10 +5,11 @@ import sys
 results = dict()
 
 
-def search_directory(directory_name):
+async def search_directory(directory_name):
     print("Begun search of " + directory_name)
     paths = []
     for dir, subdirs, files in os.walk(directory_name):
+        await asyncio.sleep(0)
         paths.append(dir)
         for file in files:
             paths.append(os.path.join(dir, file))
@@ -32,8 +33,10 @@ def ask_user_for_directory_names():
 
 
 def start_all_searches(directory_names):
+    tasks = []
     for directory_name in directory_names:
-        search_directory(directory_name)
+        tasks.append(asyncio.create_task(search_directory(directory_name)))
+    return tasks
 
 
 def list_searches():
@@ -70,11 +73,12 @@ Choose an option from the menu:
     print("Goodbye!")
 
 
-def main():
+async def main():
     directory_names = ask_user_for_directory_names()
     tasks = start_all_searches(directory_names)
+    await asyncio.gather(*tasks)
     display_results()
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
