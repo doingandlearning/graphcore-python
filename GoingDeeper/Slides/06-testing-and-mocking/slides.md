@@ -643,3 +643,234 @@ Typical refactoring activities:
 
 </v-clicks>
 
+---
+
+# Mocking
+
+- Overview of mocking
+- Mocking in Python
+- Mocking constants
+- Mocking functions
+- Mocking classes
+
+
+---
+# Overview of mocking
+
+<v-clicks>
+
+Real-world systems involve lots of interacting code
+- Testing focuses on the behaviour of an isolated unit
+- We can use mocks to "blank off" other code
+
+Mocking
+- Use a mocking framework to create a mock value/function/object 
+- Use the mock value/function/object rather than a real one
+
+</v-clicks>
+
+---
+
+# Mocking in Python
+
+<v-clicks>
+
+The Python Unittest module (aka PyUnit) has standard support for mocking
+- Via the unittest.mock module
+
+PyTest-mock is a thin wrapper over unittest.mock
+- Provides a mocker fixture
+- You can use mocker to patch constants, functions, and classes
+
+To install PyTest-mock:
+
+```bash
+pip install pytest-mock
+```
+
+</v-clicks>
+
+---
+
+# Mocking constants (1/2)
+
+Consider this constant:
+
+```python
+BASE_URL = "https://example.com/api/products"
+```
+
+We use the constant in our code-under-test:
+
+```python
+from mockdemo_dependencies import BASE_URL
+
+def build_url(**kwargs):
+    url = BASE_URL
+    if len(kwargs) != 0:
+        url += "?"
+        for k, v in kwargs.items():
+            url += "{}={}&".format(k,v)
+        url = url.rstrip('&')
+    return url
+```
+
+---
+layout: two-cols
+---
+# Mocking constants (2/2)
+
+We can mock the constant in our test as follows:
+- Receive a mocker object (from PyTest-mock)
+- Use the mocker object to define a mock value for BASE_URL
+
+::right::
+
+```python
+import mockdemo_mycode
+
+
+def test_build_url(mocker):
+
+    # Mock BASE_URL, when used in mockdemo_mycode.
+    mocker.patch.object(mockdemo_mycode, 'BASE_URL', 'http://localhost/products')
+
+    # Call function-under-test.
+    actual = mockdemo_mycode.build_url(minPrice=100, maxPrice=500, order='desc')
+
+    # This is the result we're expecting.
+    expected = 'http://localhost/products?minPrice=100&maxPrice=500&order=desc'
+
+    # Verify the result was correct.
+    assert expected == actual
+```
+
+---
+
+# Mocking functions (1/2)
+
+Consider this function (it's soooooo slow):
+
+```python
+import time 
+
+def calculate_meaning_of_life():
+    time.sleep(60)
+    return 42
+```
+
+We call the function in our code-under-test:
+
+```python
+from mockdemo_dependencies import calculate_meaning_of_life
+
+def get_meaning_of_life():
+    result = calculate_meaning_of_life()
+    return 'The meaning of life is ' + str(result)
+```
+
+---
+layout: two-cols
+---
+# Mocking functions (2/2)
+
+We can mock the function in our test as follows:
+- Receive a mocker object (from PyTest-mock)
+- Use the mocker object to mock the return value for the function
+
+```python
+import mockdemo_mycode
+
+
+def test_get_meaning_of_life(mocker):
+
+    # Mock calculate_meaning_of_life(), when called from mockdemo_mycode.
+    mocker.patch(
+        'mockdemo_mycode.calculate_meaning_of_life',
+        return_value='wibble'
+    )
+
+    # Call function-under-test.
+    actual = mockdemo_mycode.get_meaning_of_life()
+
+    # This is the result we're expecting.
+    expected = 'The meaning of life is wibble'
+
+    # Verify the result was correct.
+    assert expected == actual
+```
+
+---
+layout: two-cols
+----
+
+# Mocking classes (1/2)
+
+Consider this class (its functions are soooooo slow):
+
+```python
+import time 
+
+class DataLoader:
+
+    def __init__(self):
+        self.delay = 60
+
+    def load_product(self):
+        time.sleep(self.delay)
+        return 'Bugatti Divo'
+
+    def load_ace_football_team(self):
+        time.sleep(self.delay)
+        return 'Swansea'
+```
+
+::right::
+
+We call the function in our code-under-test:
+
+```python
+from mockdemo_dependencies import DataLoader
+
+def get_product():
+    dataLoader = DataLoader()
+    result = dataLoader.load_product()
+    return 'Product is ' + str(result)
+```
+
+---
+layout: two-cols
+---
+
+# Mocking classes (2/2)
+
+We can mock the class in our test as follows:
+- Receive a mocker object (from PyTest-mock)
+- Use the mocker object to mock the class method
+
+::right::
+
+```python
+import mockdemo_mycode
+
+
+def test_get_product(mocker):
+
+    def dummy_get_product(self):
+        return 'wibble'
+
+    # Mock DataLoader.load_product(), when called from mockdemo_mycode.
+    mocker.patch(
+        'mockdemo_mycode.DataLoader.load_product',
+        dummy_get_product
+    )
+
+    # Call function-under-test.
+    actual = mockdemo_mycode.get_product()
+
+    # This is the result we're expecting.
+    expected = 'Product is wibble'
+
+    # Verify the result was correct.
+    assert expected == actual
+```
