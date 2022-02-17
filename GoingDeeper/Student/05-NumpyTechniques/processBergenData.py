@@ -5,3 +5,5 @@ import pandas as pd
 dataframe = pd.read_csv('BergenWeather2019.csv')
 precipitation_mm = np.array(dataframe['Precipitation'])
 print('\nPrecipitation mm\n', precipitation_mm)
+
+precipitation_cm = precipitation_mm / 10

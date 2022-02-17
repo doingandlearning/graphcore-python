@@ -1,6 +1,6 @@
 import numpy as np
 
-data = np.arange(9).reshape([3,3])
+data = np.arange(9).reshape([3, 3])
 
 # Calculate the sum over the entire array.
 print('Array data:\n', data)
